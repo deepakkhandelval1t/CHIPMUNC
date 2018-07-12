@@ -1,0 +1,68 @@
+
+			<div class="ui-block">
+				<div class="ui-block-title">
+					<h2 class="title">Information regarding languages</h2>
+                </div>
+                <div class="ui-block-content">
+                    <!-- education courses -->
+                    <form [formGroup]="form" (ngSubmit)= "saveLanguages()">
+                        <div class="row">
+                            <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                                <div class="form-group">
+                                    <label class="control-label">Name of Language</label>
+                                    <input class="form-control" placeholder="" type="text" value="" formControlName="name">
+                                    <small class="text-danger" *ngIf="form.controls['name'].hasError('required') && form.controls['name'].touched">
+                                        Please enter valid Language Name
+                                    </small>
+                                    <small class="text-danger" *ngIf="form.controls['name'].hasError('nameValid') && form.controls['name'].touched">
+                                        Please enter valid Language Name
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                                <div class="form-groupis-select">
+                                    <label class="control-label">Proficency Level</label>
+                                    <select class="selectpicker form-control" formControlName="proficency_level">
+                                        <option value="1">low</option>
+                                        <option value="2">medium</option>
+                                        <option value="3">higher</option>
+                                    </select>              
+                                </div>
+                            </div>
+                       </div>
+                       <div class="row">
+							<div class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
+								<div class="form-group is-select">
+									<label class="control-label">Can read?</label>
+									<select class="selectpicker form-control" formControlName="can_read">
+                                        <option value="0">No</option>
+                                        <option value="1">Yes</option>
+                                    </select>
+								</div>
+                            </div>
+                            <div class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
+								<div class="form-group is-select">
+									<label class="control-label">Can write?</label>
+									<select class="selectpicker form-control" formControlName="can_write">
+                                        <option value="0">No</option>
+                                        <option value="1">Yes</option>
+                                    </select>
+								</div>
+                            </div>
+                            <div class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
+								<div class="form-group is-select">
+									<label class="control-label">Can speak?</label>
+									<select class="selectpicker form-control" formControlName="can_speak">
+                                        <option value="0">No</option>
+                                        <option value="1">Yes</option>
+                                    </select>
+								</div>
+                            </div>
+                            <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                                <button type="submit" class="btn btn-primary btn-lg full-width">Save all Changes</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        

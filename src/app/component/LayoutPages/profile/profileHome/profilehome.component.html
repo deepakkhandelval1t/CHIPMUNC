@@ -1,0 +1,273 @@
+<div class="ui-block">
+    <div class="ui-block-title">
+        <h6 class="title">Personal Information</h6>
+    </div>
+    <div class="ui-block-content">
+        <!-- Personal Information Form  -->
+        <form [formGroup]="form" (ngSubmit)="saveUserProfile()">
+            <!--profile heading-->
+            <div class="row">
+
+                <div class="col-md-12 col-lg-12">
+                    <div class="form-group">
+                        <label class="control-label">Profile Heading</label>
+                        <input class="form-control" placeholder="" type="text" value="" formControlName="profile_heading">
+                        <small class="text-danger" *ngIf="form.controls['profile_heading'].hasError('required') && form.controls['profile_heading'].touched">
+                            Enter Valid Profile Heading
+                        </small>
+                    </div>
+                </div>
+            </div>
+            <!--name-->
+            <div class="row">
+                <div class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
+                    <div class="form-group">
+                        <label class="control-label">First Name</label>
+                        <input class="form-control" placeholder="" type="text" value="" formControlName="first_name">
+                        <small class="text-danger" *ngIf="form.controls['first_name'].hasError('required') && form.controls['first_name'].touched">
+                            Please enter valid First Name
+                        </small>
+                        <small class="text-danger" *ngIf="form.controls['first_name'].hasError('nameValid') && form.controls['first_name'].touched">
+                            Please enter valid First Name
+                        </small>
+                        
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
+                    <div class="form-group">
+                        <label class="control-label">Middle Name</label>
+                        <input class="form-control" placeholder="" type="text" value="" formControlName="middle_name">
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
+                    <div class="form-group">
+                        <label class="control-label">Last Name</label>
+                        <input class="form-control" placeholder="" type="text" value="" formControlName="last_name">
+                        <small class="text-danger" *ngIf="form.controls['last_name'].hasError('required') && form.controls['last_name'].touched">
+                            Please enter valid Last Name
+                        </small>
+                        <small class="text-danger" *ngIf="form.controls['last_name'].hasError('nameValid') && form.controls['last_name'].touched">
+                            Please enter valid Last Name
+                        </small>
+
+                    </div>
+                </div>
+            </div>
+            <!--numbers-->
+            <div class="row">
+                <div class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
+                    <div class="form-group">
+                        <label class="control-label">Office Phone Number</label>
+                        <input class="form-control" placeholder="" type="text" value="" formControlName="office_phone">
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
+                    <div class="form-group">
+                        <label class="control-label">Home Phone Number</label>
+                        <input class="form-control" placeholder="" type="text" value="" formControlName="home_phone">
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
+                    <div class="form-group">
+                        <label class="control-label">Mobile Phone Number</label>
+                         <input class="form-control" placeholder="" type="text" value="" formControlName="mobile_phone">
+                         <small class="text-danger" *ngIf="form.controls['mobile_phone'].hasError('required') && form.controls['mobile_phone'].touched">
+                            Please enter valid contact number
+                        </small>
+                        <small class="text-danger" *ngIf="form.controls['mobile_phone'].hasError('mobileValid') && form.controls['mobile_phone'].touched">
+                            Please enter valid contact number
+                            eg:09876543212
+                        </small>
+                    </div>
+                </div>
+            </div>
+            <!--address-->
+            <div class="row">
+                <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="form-group">
+                        <label class="control-label">Permanent Address</label>
+                        <input class="form-control" placeholder="" type="text" value="" formControlName="permanent_address">
+                        <small class="text-danger" *ngIf="form.controls['permanent_address'].hasError('permanentaddressValid') && form.controls['permanent_address'].touched">
+                            Please enter house no., street or lane, area
+                        </small>
+                    </div>
+                </div>
+                <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="form-group">
+                        <label class="control-label">Current Address</label>
+                        <input class="form-control" placeholder="" type="text" value="" formControlName="current_address">
+                        <small class="text-danger" *ngIf="form.controls['current_address'].hasError('required') && form.controls['current_address'].touched">
+                            Please enter house no., street or lane, area
+                        </small>
+                        <small class="text-danger" *ngIf="form.controls['current_address'].hasError('currentaddressValid') && form.controls['current_address'].touched">
+                            Please enter house no., street or lane, area
+                        </small>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="form-group is-select">
+                        <label class="control-label">Your Country</label>
+                        <select class="selectpicker form-control" formControlName="country">
+                            <option value="US">United States</option>
+                            <option value="AU">Australia</option>
+                        </select>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="form-group is-select">
+                        <label class="control-label">Your State / Province</label>
+                        <select class="selectpicker form-control" formControlName="state">
+                            <option value="CA">California</option>
+                            <option value="TE">Texas</option>
+                        </select>
+                            
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="form-group is-select">
+                        <label class="control-label">Your City</label>
+                        <select class="selectpicker form-control" formControlName="city">
+                            <option value="SF">San Francisco</option>
+                            <option value="NY">New York</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!--pin code and gender-->
+            <div class="row">
+                <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="form-group">
+                        <label class="control-label">Pin Code</label>
+                        <input class="form-control" placeholder="" type="text" value="" formControlName="pincode">
+                        <small class="text-danger" *ngIf="form.controls['pincode'].hasError('required') && form.controls['pincode'].touched">
+                           Please enter correct pincode
+                        </small>
+                        <small class="text-danger" *ngIf="form.controls['pincode'].hasError('pincodeValid') && form.controls['pincode'].touched">
+                            Please enter correct pincode
+                         </small>
+                    </div>
+                </div>
+                <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="form-group is-select">
+                        <label class="control-label">Your Gender</label>
+                        <select class="selectpicker form-control" formControlName="gender">
+                            <option value="1">Male</option>
+                            <option value="2">Female</option>
+                            <option value="3">Transgender</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!--birthdate and passportnumber-->
+            <div class="row">
+                <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="form-group date-time-picker">
+                        <label class="control-label">Your Birth Date</label>
+                        <input name="datetimepicker" value="1982/30/02" formControlName="dob"/>
+                        <span class="input-group-addon">
+                            <svg class="olymp-month-calendar-icon icon">
+                                <use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-month-calendar-icon"></use>
+                            </svg>
+                        </span>
+                    </div>  
+                </div>
+                <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="form-group">
+                        <label class="control-label">Passport Number</label>
+                        <input class="form-control" placeholder="" type="text" value="" formControlName="passport_number">
+                        <small class="text-danger" *ngIf="form.controls['passport_number'].hasError('passportValid') && form.controls['passport_number'].touched">
+                             Please enter correct passport number
+                        </small>
+                    </div>
+                </div>
+            </div>
+            <!--pacakge and marital status-->
+            <div class="row">
+                <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="form-group">
+                        <label class="control-label">Current Package</label>
+                        <input class="form-control" placeholder="" type="text" value="" formControlName="current_package">
+                        <small class="text-danger" *ngIf="form.controls['current_package'].hasError('ctcValid') && form.controls['current_package'].touched">
+                            Please enter valid current package
+                       </small>
+                    </div>
+                </div>
+                <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="form-group is-select">
+                    <label class="control-label">Marital Status</label>
+                        <select class="selectpicker form-control" formControlName="marital_status">
+                            <option value="1">Unmarried</option>
+                            <option value="2">Married</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!--website and email-->
+            <div class="row">
+                <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="form-group">
+                        <label class="control-label">Your Website</label>
+                        <input class="form-control" placeholder="" type="text" value="" formControlName="website">
+                    </div>
+                </div>
+                <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="form-group">
+                        <label class="control-label">Your Email</label>
+                        <input class="form-control" placeholder="" type="email" value="" formControlName="email">
+                        <small class="text-danger" *ngIf="form.controls['email'].hasError('required') && form.controls['email'].touched">
+                            Please enter correct email
+                         </small>
+                         <small class="text-danger" *ngIf="form.controls['email'].hasError('emailValid') && form.controls['email'].touched">
+                             Please enter correct email
+                          </small>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="form-group with-icon">
+                        <label class="control-label">Your Facebook Account</label>
+                        <input class="form-control" type="text" value="" formControlName="facebook">
+                        <i style="color:#4a6ea9" class="fab fa-facebook"></i>
+                    </div>
+                </div>
+                <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="form-group with-icon">
+                        <label class="control-label">Your StackOverflow Acoount</label>
+                        <input class="form-control" type="txet" value="" formControlName="stackoverflow">
+                        <i style="color:#ff5e3a" class="fab fa-stack-overflow"></i>
+                    </div>
+                </div>
+                <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="form-group with-icon">
+                        <label class="control-label">Your Linkedin Acoount</label>
+                        <input class="form-control" type="text" value="" formControlName="linkedin">
+                        <i style="color: #007bb6;" class="fab fa-linkedin"></i>
+                    </div>
+                </div>
+                <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="form-group with-icon">
+                        <label class="control-label">Your GitHub Account</label>
+                        <input class="form-control" type="text" value="" formControlName="github">
+                        <i style="color:#000" class="fab fa-github"></i>
+                    </div>
+                </div>
+                
+                <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                    <button class="btn btn-secondary btn-lg full-width">Restore all Attributes</button>
+                </div>
+                <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                    <button class="btn btn-primary btn-lg full-width">Save all Changes</button>
+                </div>
+                
+            </div>
+            </form>
+        <!-- ... end Personal Information Form  -->
+    </div>
+</div>

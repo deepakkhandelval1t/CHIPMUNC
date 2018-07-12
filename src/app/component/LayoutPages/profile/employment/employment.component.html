@@ -1,0 +1,100 @@
+
+			<div class="ui-block">
+				<div class="ui-block-title">
+					<h2 class="title">Professional details</h2>
+                </div>
+                <div class="ui-block-content">
+					<!-- education -->
+					<form [formGroup]="form" (ngSubmit)= "saveProfessional()">
+                    <div class="row">
+                        <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="form-group is-select">
+                                <label class="control-label">Any Current Company</label>
+                                <select class="selectpicker form-control" formControlName="is_current_company">
+                                    <option value="0">NO</option>
+                                    <option value="1">YES</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="form-group">
+                                <label class="control-label">Company Name</label>
+                                <input class="form-control" placeholder="" type="text" value="" formControlName="company_name">
+                                <small class="text-danger" *ngIf="form.controls['company_name'].hasError('companynameValid') && form.controls['company_name'].touched">
+                                    Please enter correct company name
+                               </small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12">
+                            <div class="form-group">
+                                <label class="control-label">Designation</label>
+                                <input class ="form-control" placeholder="" type="text" value="" formControlName="designation">
+                                <small class="text-danger" *ngIf="form.controls['designation'].hasError('designationValid') && form.controls['designation'].touched">
+                                    Please enter correct designation
+                               </small>
+                            </div>
+                        </div>
+                    </div>
+              
+                    <div class="row">
+                        <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="form-group">
+                                <label class="control-label">Worked from (month)</label>
+                                <input class="form-control" placeholder="" type="text" value="" formControlName="worked_month_from">
+                                <small class="text-danger" *ngIf="form.controls['worked_month_from'].hasError('employmentmonthValid') && form.controls['worked_month_from'].touched">
+                                    Please enter correct duration
+                               </small>
+                            </div>
+                        </div>
+                        <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="form-group">
+                                <label class="control-label">Worked to (month)</label>
+                                <input class="form-control" placeholder="" type="text" value="" formControlName="worked_month_to">
+                                <small class="text-danger" *ngIf="form.controls['worked_month_to'].hasError('employmentmonthValid') && form.controls['worked_month_to'].touched">
+                                    Please enter correct duration
+                               </small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="form-group">
+                               <label class="control-label">Worked from (year)</label>
+                                <input class="form-control" placeholder="" type="text" value="" formControlName="worked_year_from">
+                                <small class="text-danger" *ngIf="form.controls['worked_year_from'].hasError('employmentyearValid') && form.controls['worked_year_from'].touched">
+                                    Please enter correct duration
+                               </small>
+                            </div>
+                        </div>
+                        <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="form-group">
+                                <label class="control-label">Worked to (year)</label>
+                                <input class="form-control" placeholder="" type="text" value="" formControlName="worked_year_to">
+                                <small class="text-danger" *ngIf="form.controls['worked_year_to'].hasError('employmentyearValid') && form.controls['worked_year_to'].touched">
+                                    Please enter correct duration
+                               </small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12">
+                            <div class="form-group">
+                                <label class="control-label">Description</label>
+                                <textarea class="form_control" placeholder="" formControlName="description"></textarea>
+                                <small class="text-danger" *ngIf="form.controls['description'].hasError('required') && form.controls['description'].touched">
+                                    Enter Valid Description 
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-lg-4 col-md-4 col-sm-12 col-12">
+                        <button type="submit" class="btn btn-primary btn-lg full-width">Save all Changes</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        
+       

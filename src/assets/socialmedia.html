@@ -1,0 +1,32 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>       
+        <script>            
+            $(document).ready(function () {
+             var app = getParameterByName('socialApp');
+             window.location.href = getApiUrl() + 'account/login/' + app ;
+               window.localStorage.setItem("app", app);
+            })
+            function getParameterByName(name, url) {
+                if (!url) url = window.location.href;
+                name = name.replace(/[\[\]]/g, "\\$&");
+                var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                    results = regex.exec(url);
+                if (!results) return null;
+                if (!results[2]) return '';
+                return decodeURIComponent(results[2].replace(/\+/g, " "));
+            }
+            
+            function getApiUrl() {
+              
+                var serviceBase = 'http://localhost:8080/api/';
+                 if (window.location.host == "dev.chipmunc.com" ) {
+                  this.serviceBase = 'https://dev-api.chipmunc.com/api/';
+                 } 
+                return serviceBase;
+            }
+        </script>
+    </body>
+</html>

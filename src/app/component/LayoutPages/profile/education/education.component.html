@@ -1,0 +1,179 @@
+<form [formGroup]="form" (ngSubmit)="saveUserEducation(form.value)">
+<div class="ui-block">
+    <div class="ui-block-title">
+        <h2 class="title">Academic Qualification</h2>
+    </div>
+
+
+    <div class="ui-block-content">
+        <!-- education -->
+
+
+        <div class="row">
+            <div class="col-md-12 col-lg-12">
+                <div class="form-group">
+                    <label class="control-label">Institute Name</label>
+                    <input class="form-control" placeholder="" type="text" value="" formControlName="institute_name">
+                    <small class="text-danger" *ngIf="form.controls['institute_name'].hasError('required') && form.controls['institute_name'].touched">
+                        Please enter valid Institute Name
+                    </small>
+                    <small class="text-danger" *ngIf="form.controls['institute_name'].hasError('nameValid') && form.controls['institute_name'].touched">
+                        Please enter valid Institute Name
+                    </small>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                <div class="form-group is-select">
+                    <label class="control-label">Course Medium</label>
+                    <select class="selectpicker form-control" placeholder="" type="text" value="" formControlName="course_mode">
+                        <option value="1">Regular</option>
+                        <option value="2">Private</option>
+                        <option value="3">Distance</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                <div class="form-group is-select">
+                    <label class="control-label">Grades</label>
+                    <select class="selectpicker form-control" formControlName="grade">
+                        <option value="1">A</option>
+                        <option value="2">B</option>
+                        <option value="3">C</option>
+                        <option value="4">D</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                <div class="form-group">
+                    <label class="control-label">Passing Year</label>
+                    <input class="form-control" placeholder="" type="text" value="" formControlName="passing_year">
+                    <small class="text-danger" *ngIf="form.controls['passing_year'].hasError('required') && form.controls['passing_year'].touched">
+                        Please enter valid year
+                    </small>
+                    <small class="text-danger" *ngIf="form.controls['passing_year'].hasError('yearValid') && form.controls['firspassing_yeart_name'].touched">
+                        Please enter valid year
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- courses name -->
+    <div class="ui-block-title">
+        <h2 class="title">
+            Courses Name
+        </h2>
+    </div>
+
+    <div class="ui-block-content">
+        <div formGroupName="edu_courses" class="row">
+
+            <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                <div class="form-group">
+                    <label class="control-label">Course Name</label>
+                    <input class="form-control" placeholder="" type="text" value="" formControlName="name">
+                    <!-- <small class="text-danger" *ngIf="form.controls.edu_courses['name'].hasError('required') && form.controls.edu_courses['name'].touched">
+                                        Please enter valid Course Name
+                                    </small>
+                                    <small class="text-danger" *ngIf="form.controls.edu_courses['name'].hasError('nameValid') && form.controls.edu_courses['name'].touched">
+                                        Please enter valid Course Name
+                                    </small> -->
+                </div>
+            </div>
+            <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                <div class="form-group is-select">
+                    <label class="control-label">Status</label>
+                    <select class="selectpicker form-control" placeholder="" type="text" value="" formControlName="status">
+                        <option value="0">In Active</option>
+                        <option value="1">Active</option>
+
+                    </select>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- courses type -->
+    <div class="ui-block-title">
+        <h2 class="title">
+            Courses Type Name
+        </h2>
+    </div>
+    <div class="ui-block-content">
+
+        <div formGroupName="educourse_type" class="row">
+            <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                <div class="form-group">
+                    <label class="control-label">Course type name</label>
+                    <input class="form-control" placeholder="" type="text" value="" formControlName="name">
+                    <!-- <small class="text-danger" *ngIf="form.controls.educourse_type['name'].hasError('required') && form.controls.educourse_type['name'].touched">
+                                        Please enter valid Course Type Name
+                                    </small>
+                                    <small class="text-danger" *ngIf="form.controls.educourse_type['name'].hasError('nameValid') && form.controls.educourse_type['name'].touched">
+                                        Please enter valid Course Type Name
+                                    </small> -->
+                </div>
+            </div>
+            <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                <div class="form-group is-select">
+                    <label class="control-label">Status</label>
+                    <select class="selectpicker form-control" placeholder="" type="text" value="" formControlName="status">
+                        <option value="0">In Active</option>
+                        <option value="1">Active</option>
+
+                    </select>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- course specialization -->
+    <div class="ui-block-title">
+        <h2 class="title">
+            Courses Specialization
+        </h2>
+    </div>
+    <div class="ui-block-content">
+        <div formGroupName="edu_specializations" class="row">
+            <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                <div class="form-group">
+                    <label class="control-label">Specialization Name</label>
+                    <input class="form-control" placeholder="" type="text" value="" formControlName="name">
+                    <!-- <small class="text-danger" *ngIf="form.controls.edu_specializations['name'].hasError('required') && form.controls.edu_specializations['name'].touched">
+                                        Please enter valid Course Type Name
+                                    </small>
+                                    <small class="text-danger" *ngIf="form.controls.edu_specializations['name'].hasError('nameValid') && form.controls.edu_specializations['name'].touched">
+                                        Please enter valid Course Type Name
+                                    </small> -->
+                </div>
+            </div>
+            <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                <div class="form-group is-select">
+                    <label class="control-label">Status</label>
+                    <select class="selectpicker form-control" placeholder="" type="text" value="" formControlName="status">
+                        <option value="0">In Active</option>
+                        <option value="1">Active</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+        <button type="submit" class="btn btn-primary btn-lg full-width">Save all Changes</button>
+    </div>
+
+</div>
+</form>

@@ -1,0 +1,116 @@
+<div class="title h6">Register to Chipmunc</div>
+	<form class="content" [formGroup]="rForm" (ngSubmit)="registration()">
+		<div class="row">
+			
+					<!-- <div class="col col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+						<div class="form-group is-empty">
+							<label class="control-label">First Name</label>
+							<input class="form-control" name="first_name" formControlName="first_name" placeholder="" type="text">
+							<div *ngIf="first_name.invalid  && first_name.touched" class="error">
+								<div class="error" *ngIf="first_name.errors?.required">
+									first_name can't be blank
+								</div>
+								<div *ngIf="first_name.errors?.pattern">
+									The first_name doesn't seem right 
+								</div>
+							</div>
+						</div>
+					</div> -->
+			
+					<!-- <div class="col col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+						<div class="form-group is-empty">
+							<label class="control-label">Last Name</label>
+							<input class="form-control" name="last_name" formControlName="last_name" placeholder="" type="text">
+							<div *ngIf="last_name.invalid  && last_name.touched" class="error">
+								<div class="error" *ngIf="last_name.errors?.required">
+									last_name can't be blank
+								</div>
+								<div *ngIf="last_name.errors?.pattern">
+									The last_name doesn't seem right
+								</div>
+							</div>
+						</div>
+					</div> -->
+				<div class="col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
+					<div class="form-group is-empty text-left">
+						<label class="control-label">Your Email</label>
+						<input class="form-control" name="email" formControlName="email" placeholder="" type="text">
+						<div *ngIf="email.invalid  && email.touched" class="error">
+							<div class="error" *ngIf="email.errors?.required">
+								email can't be blank
+							</div>
+							<div *ngIf="email.errors?.pattern">
+								email doesn't seem right
+							</div>
+						</div>
+					</div>
+					<div class="form-group is-empty text-left">
+					    <label class="control-label">Your Password</label>
+					    <input class="form-control" formControlName="password" name="password" placeholder="" type="password">
+					     <div *ngIf="password.invalid  && password.touched" class="error">
+						     <div class="error" *ngIf="password.errors?.required">
+							    password can't be blank
+						    </div>
+						     <div *ngIf="password.errors?.pattern">
+							       Password must contain  minimum 8 length with at least one lower case letter , 
+							       one upper case letter , one Number and one special letter
+						    </div>
+						  </div>
+                    </div>
+					<div class="form-group is-empty text-left">
+					    <label class="control-label">Confirm Password</label>
+					    <input  class="form-control" formControlName="confirmpassword" name="confirmpassword" placeholder="" type="password">
+					     <div *ngIf="confirmpassword.invalid  && confirmpassword.touched" class="text-danger">
+						     <div class="error" *ngIf="confirmpassword.errors?.required">
+							    password can't be blank
+						    </div>
+						 </div>
+				    </div>
+					
+				    
+				    <!-- <div class="form-group date-time-picker text-left">
+					    <!-- <label class="control-label">Your Birthday</label>
+					    <input (click) = "setmindate()" type="date" value="10/24/1984" formControlName="dob" name="dob" onkeydown="return false" min="1918-05-24" max = {{maxDate}}/>
+					    <span class="input-group-addon">
+							 <svg class="olymp-calendar-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-calendar-icon"></use></svg>
+						</span>
+					    <div *ngIf="dob.invalid  && dob.touched" class="error">
+                             <div class="error" *ngIf="dob.errors?.required">
+							  dob can't be blank
+						    </div>
+					   </div> 
+
+					   <label class="control-label">Your Birthday</label>
+						<input type="text" placeholder="Datepicker" class="form-control" bsDatepicker>
+				
+				    </div> -->
+				    <!-- <div class="form-group is-select text-left">
+					    <label class="control-label">Your Gender</label>
+					     <select class="selectpicker form-control" formControlName="gender" name="gender">
+						    <option value="1">Male</option>
+						     <option value="2">Female</option>
+					    </select>
+					     <div *ngIf="gender.invalid && password.touched" class="error">
+						     <div class="error" *ngIf="gender.errors?.required">
+							    gender can't be blank
+						     </div>
+					    </div>
+				    </div> -->
+				    <div class="remember">
+					    <div class="checkbox">
+						    <label>
+							    <input name="optionsCheckboxes" type="checkbox"  formControlName="tc" name = "tc"  >
+								    I accept the <a class="text-primary" href="#">Terms and Conditions</a> of the website
+						    </label>
+						    <div *ngIf="tc.invalid  && tc.touched" class="error">
+							      <div class="error" *ngIf="tc.errors?.required">
+								   please select terms and condition 
+							      </div>
+						    </div>
+						    <label> {{msg}} </label>
+					    </div>
+				    </div>
+				    <button class="btn btn-purple btn-lg full-width" type="submit" [disabled]="!rForm.valid  " >Complete Registration!   </button>
+			    </div>
+		</div>
+	</form>

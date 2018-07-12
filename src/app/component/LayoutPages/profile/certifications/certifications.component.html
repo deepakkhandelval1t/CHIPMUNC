@@ -1,0 +1,71 @@
+<div class="ui-block">
+				<div class="ui-block-title">
+					<h2 class="title">Certifications</h2>
+        </div>
+        <div class="ui-block-content">
+					<!-- certifications -->
+					<form [formGroup]="form" (ngSubmit)= "saveUserCertificates()">
+						
+						<div class="row">
+              <div class="col-md-12 col-lg-12">
+								<div class="form-group">
+									<label class="control-label">Name of Ceritificate</label>
+                  <input class="form-control" placeholder="" type="text" value="" formControlName="name">
+                  <small class="text-danger" *ngIf="form.controls['name'].hasError('required') && form.controls['name'].touched">
+                    Please enter valid Certificate name
+                  </small>
+                  <small class="text-danger" *ngIf="form.controls['name'].hasError('nameValid') && form.controls['name'].touched">
+                    Please enter valid Certificate name
+                  </small>
+								</div>
+							</div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                <div class="form-group">
+                  <label class="control-label">Time Duration(months)</label>
+                  <input class="form-control" placeholder="" type="text" value="" formControlName="completed_month">
+                  <small class="text-danger" *ngIf="form.controls['completed_month'].hasError('required') && form.controls['completed_month'].touched">
+                    Please enter valid Duration
+                  </small>
+                  <small class="text-danger" *ngIf="form.controls['completed_month'].hasError('monthValid') && form.controls['completed_month'].touched">
+                    Please enter valid Duration 
+                  </small>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                <div class="form-group">
+                  <label class="control-label">Time Duration(year)</label>
+                  <input class="form-control" placeholder="" type="text" value="" formControlName="completed_year">
+                  <small class="text-danger" *ngIf="form.controls['completed_year'].hasError('required') && form.controls['completed_year'].touched">
+                    Please enter valid Duration
+                  </small>
+                  <small class="text-danger" *ngIf="form.controls['completed_year'].hasError('yearValid') && form.controls['completed_year'].touched">
+                    Please enter valid Duration 
+                  </small>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12 col-lg-12">
+                <div class="form-group">
+                  <label class="control-label">Description</label>
+                  <textarea class="form-control" placeholder="" formControlName="description"></textarea>
+                  <small class="text-danger" *ngIf="form.controls['description'].hasError('required') && form.controls['description'].touched">
+                    Enter Valid Description
+                </small>
+                </div>
+              </div>
+            </div>
+            <div class="col col-lg-4 col-md-4 col-sm-12 col-12">
+              <button type="submit" class="btn btn-primary btn-lg full-width">Save all Changes</button>
+            </div>
+          </form>
+          </div>
+    
+        </div>
+
+  

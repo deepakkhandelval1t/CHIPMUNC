@@ -1,0 +1,63 @@
+<header class="header" id="site-header">
+  <div class="container">
+    <div class="header-content-wrapper">
+
+      <div class="row">
+        <div class="col-sm-3 mt-20">
+          <a routerLink="/dashboard">
+            <img src="assets/img/logo_white.png" alt="" class="logo">
+          </a>
+        </div>
+
+        <div class="col-sm-9 text-right">
+          <div class="control-block mt-2">
+            <div class="author-page author vcard inline-items more">
+              <div class="author-thumb">
+                <img alt="author" class="avatar" src="assets/img/author-page.jpg">
+                <span class="icon-status online"></span>
+                <div class="more-dropdown more-with-triangle">
+                  <div class="mCustomScrollbar ps ps--theme_default" data-mcs-theme="dark" data-ps-id="8ae184cf-3e1b-8adf-d2d0-87581c4b56f6">
+                    <div class="ui-block-title ui-block-title-small">
+                      <h6 class="title">Your Account</h6>
+                    </div>
+                    <ul class="account-settings">
+                      <li>
+                        <a [routerLink]="['/profile']">
+                          <svg class="olymp-menu-icon">
+                            <use xlink:href="#olymp-menu-icon"></use>
+                          </svg>
+                          <span>Profile Settings</span>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="javascript:void(0)" (click)="logout()">
+                          <svg class="olymp-logout-icon">
+                            <use xlink:href="#olymp-logout-icon"></use>
+                          </svg>
+                          <span>Log Out</span>
+                        </a>
+                      </li>
+                    </ul>
+                    <div class="ps__scrollbar-x-rail" style="left: 0px; bottom: 0px;">
+                      <div class="ps__scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+                    </div>
+                    <div class="ps__scrollbar-y-rail" style="top: 0px; right: 0px;">
+                      <div class="ps__scrollbar-y" tabindex="0" style="top: 0px; height: 0px;"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a class="author-name fn">
+                <div class="author-title">{{ userName }}
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

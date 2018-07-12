@@ -1,0 +1,62 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>        
+        <script>            
+            $(document).ready(function () {
+                var code = getParameterByName('code');
+                var url = getUrl(window.localStorage.getItem('app'))  
+                $.ajax({
+                    type: 'GET',
+                    url: getApiUrl() + url + code,
+                    success: function (data) {
+                        if(data.success){
+                            window.opener.socaialmedia_login.fbAuthenticationCallback(true, data);
+                            window.close();                        
+                        }
+                        else {
+                            window.localStorage.removeItem('app');
+                            window.opener.socaialmedia_login.fbAuthenticationCallback(false, null);
+                            window.close();
+                        }
+                    },
+                    error: function(error){
+                        window.localStorage.removeItem('app');
+                        window.close();
+                    }
+                })
+            })
+            function getUrl(app){
+                switch (app) {
+                    case 'google':
+                        return '/login/google/callback?code=';
+                        break;
+                    case 'facebook':
+                        return '/login/facebook/callback?code=';
+                        break;
+                    case 'linkedin':
+                        return '/login/linkedin/callback?code=';
+                        break;
+                }
+            }
+            function getParameterByName(name, url) {
+                if (!url) url = window.location.href;
+                name = name.replace(/[\[\]]/g, "\\$&");
+                var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                    results = regex.exec(url);
+                if (!results) return null;
+                if (!results[2]) return '';
+                return decodeURIComponent(results[2].replace(/\+/g, " "));
+            }
+           function getApiUrl() {
+                var serviceBase = 'http://localhost:8080/api/account';
+                console.log(serviceBase);
+                 if (window.location.host == "dev.chipmunc.com" ) {
+                  this.serviceBase = 'https://dev-api.chipmunc.com/api/account';
+                 } 
+                return serviceBase;
+            }
+        </script>
+    </body>
+</html>
